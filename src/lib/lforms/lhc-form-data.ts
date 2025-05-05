@@ -1776,6 +1776,9 @@ export default class LhcFormData {
           else if (field === "unit") {
             itemData[field] = this._getOriginalValue(item, item[field]);
           }
+          else if (field === "_displayTextHTML" || field === "_hasInvalidHTMLTagInText") {
+            itemData[field] = item[field];
+          }
           // ignore the internal lforms data and angular data
           else if (!field.match(/^[_\$]/) && field !== 'extension') {
             itemData[field] = item[field];
